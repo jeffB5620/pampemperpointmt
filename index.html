@@ -63,6 +63,7 @@
   color-scheme:light;
 }
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 body{margin:0;background:var(--ivory);color:var(--ink);font:400 16px/1.65 var(--body);-webkit-font-smoothing:antialiased}
@@ -142,20 +143,21 @@ section{scroll-margin-top:84px}
 .sec-head p{font-size:17px}
 
 /* offers */
-.offers{background:var(--char);color:var(--on-char)}
+.offers{background:var(--blush);color:var(--ink)}
 .offers .wrap{padding-block:64px}
-.offers .eyebrow{color:var(--coral)}
+.offers .eyebrow{color:var(--char)}
 .offer-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-.offer{position:relative;border:1px solid rgba(241,235,230,.22);padding:56px 20px 22px;display:flex;flex-direction:column;gap:8px}
+.offer{position:relative;border:1px solid rgba(22,20,20,.28);background:rgba(250,248,245,.35);padding:78px 20px 22px;display:flex;flex-direction:column;gap:8px}
 .ribbon{position:absolute;top:-1px;right:18px;background:var(--coral);color:var(--ink);text-align:center;padding:8px 10px 14px;
   clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%);line-height:1}
 .ribbon b{display:block;font:400 26px/1 var(--display);font-weight:700}
 .ribbon small{font:600 9px/1 var(--body);letter-spacing:.2em}
 .offer h3{font:600 18px/1.3 var(--body)}
-.offer p{font-size:14px;color:var(--muted-char)}
-.offers .fine{margin-top:22px;font-size:13px;color:var(--muted-char)}
+.offer p{font-size:14px;color:var(--char)}
+.offer-cta{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:14px 24px}
+.offers .fine{font-size:13px;color:var(--char)}
 @media (max-width:900px){.offer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:480px){.offer-grid{grid-template-columns:1fr}}
+@media (max-width:480px){.offer-grid{grid-template-columns:1fr}.offer{padding-top:22px}.offer h3{padding-right:84px}}
 
 /* services menu */
 .services .wrap{padding-block:80px 72px}
@@ -267,6 +269,8 @@ footer a{color:var(--on-char)}
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+<div class="strip" data-promo><div class="wrap">50% off selected treatments, 28 October to 30 November. <a href="#offers">See the offers</a></div></div>
+
 <header class="top">
   <div class="wrap">
     <a class="logo" href="#top" aria-label="Pamper Point, back to top">
@@ -275,6 +279,7 @@ footer a{color:var(--on-char)}
     </a>
     <nav class="links" aria-label="Main">
       <a href="#services">Services</a>
+      <a href="#offers" data-promo>Offers</a>
       <a href="#mina">About Mina</a>
       <a href="#mobile">Mobile</a>
       <a href="#visit">Visit</a>
@@ -303,6 +308,27 @@ footer a{color:var(--on-char)}
   </div>
 </section>
 
+<section class="offers" id="offers" aria-labelledby="offers-title" data-promo>
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">28 October – 30 November 2026</p>
+      <h2 id="offers-title">Half price until 30 November</h2>
+      <p>For five weeks, these four treatments are 50% off. Book on Fresha and pick a date between 28 October and 30 November.</p>
+    </div>
+    <div class="offer-grid">
+      <article class="offer"><div class="ribbon" aria-hidden="true"><b>50%</b><small>OFF</small></div>
+        <h3>Hair colour &amp; treatments</h3><p>Roots and full-head colour, keratin treatment, highlights, ombré.</p></article>
+      <article class="offer"><div class="ribbon" aria-hidden="true"><b>50%</b><small>OFF</small></div>
+        <h3>Gel nail extensions</h3><p>Full set.</p></article>
+      <article class="offer"><div class="ribbon" aria-hidden="true"><b>50%</b><small>OFF</small></div>
+        <h3>Eyelash extensions</h3><p>Full set.</p></article>
+      <article class="offer"><div class="ribbon" aria-hidden="true"><b>50%</b><small>OFF</small></div>
+        <h3>Facials</h3><p>1-hour deep cleansing or 1.5-hour customised facial.</p></article>
+    </div>
+    <div class="offer-cta"><a class="btn btn-dark" href="https://www.fresha.com/a/61-triq-il-ghajn-swieqi-san-giljan-triq-il-ghajn-c51euue8/all-offer?menu=true&amp;share=true&amp;pId=28182" target="_blank" rel="noopener">Book at half price</a><p class="fine">Offer valid on appointments from 28 October to 30 November 2026.</p></div>
+  </div>
+</section>
+
 <section class="services" id="services" aria-labelledby="services-title">
   <div class="wrap">
     <div class="sec-head">
@@ -311,19 +337,19 @@ footer a{color:var(--on-char)}
       <p>Nine specialities in one salon. See full prices and live availability on Fresha.</p>
     </div>
     <div class="menu">
-      <article class="cat"><h3>Hair</h3><p class="tag">Cut, colour and finish.</p>
+      <article class="cat"><h3>Hair</h3><p class="tag">Cut, colour and finish.</p><span class="deal" data-promo>50% off colour</span>
         <ul><li>Wash and blow dry</li><li>Cut and blow dry</li><li>Roots and full-head colour</li><li>Balayage</li><li>Highlights and ombré</li><li>Keratin treatment</li></ul>
         <a class="book" href="https://www.fresha.com/a/61-triq-il-ghajn-swieqi-san-giljan-triq-il-ghajn-c51euue8/all-offer?menu=true&amp;share=true&amp;pId=28182" target="_blank" rel="noopener">Book hair →</a></article>
-      <article class="cat"><h3>Nails</h3><p class="tag">Hands and feet, finished properly.</p>
+      <article class="cat"><h3>Nails</h3><p class="tag">Hands and feet, finished properly.</p><span class="deal" data-promo>50% off gel sets</span>
         <ul><li>Manicures and pedicures, from a quick file and paint to the full treatment</li><li>Gel polish, hands and feet</li><li>Hard gel and acrylic extensions</li><li>Infills and refills, including work started at another salon</li><li>Nail art and ombré</li><li>Strengthening, repairs and safe removal</li></ul>
         <a class="book" href="https://www.fresha.com/a/61-triq-il-ghajn-swieqi-san-giljan-triq-il-ghajn-c51euue8/all-offer?menu=true&amp;share=true&amp;pId=28182" target="_blank" rel="noopener">Book nails →</a></article>
-      <article class="cat"><h3>Lashes</h3><p class="tag">From barely-there to full volume.</p>
+      <article class="cat"><h3>Lashes</h3><p class="tag">From barely-there to full volume.</p><span class="deal" data-promo>50% off full sets</span>
         <ul><li>Classic, hybrid and express extensions</li><li>Russian volume</li><li>3D to 8D sets</li><li>Refills at two, three and four weeks</li><li>Lash lift and lamination</li><li>Tinting and gentle removal</li></ul>
         <a class="book" href="https://www.fresha.com/a/61-triq-il-ghajn-swieqi-san-giljan-triq-il-ghajn-c51euue8/all-offer?menu=true&amp;share=true&amp;pId=28182" target="_blank" rel="noopener">Book lashes →</a></article>
       <article class="cat"><h3>Brows</h3><p class="tag">Shaped to your face, not to a template.</p>
         <ul><li>Waxing and threading</li><li>Tinting</li><li>Henna shadow</li><li>Lamination for a fuller, groomed finish</li></ul>
         <a class="book" href="https://www.fresha.com/a/61-triq-il-ghajn-swieqi-san-giljan-triq-il-ghajn-c51euue8/all-offer?menu=true&amp;share=true&amp;pId=28182" target="_blank" rel="noopener">Book brows →</a></article>
-      <article class="cat"><h3>Facials</h3><p class="tag">Time for your skin.</p>
+      <article class="cat"><h3>Facials</h3><p class="tag">Time for your skin.</p><span class="deal" data-promo>50% off</span>
         <ul><li>1-hour deep cleansing facial</li><li>1.5-hour customised facial</li></ul>
         <a class="book" href="https://www.fresha.com/a/61-triq-il-ghajn-swieqi-san-giljan-triq-il-ghajn-c51euue8/all-offer?menu=true&amp;share=true&amp;pId=28182" target="_blank" rel="noopener">Book a facial →</a></article>
       <article class="cat"><h3>Waxing</h3><p class="tag">Warm wax, face and body, women and men.</p>
@@ -444,6 +470,8 @@ footer a{color:var(--on-char)}
 (function(){
   var d=new Date();
   document.getElementById('yr').textContent=d.getFullYear();
+  // Campaign ends 30 Nov 2026 at midnight Malta time (UTC+1): hide all offer content after that.
+  if(Date.now()>=Date.UTC(2026,10,30,23,0,0)){document.querySelectorAll('[data-promo]').forEach(function(el){el.hidden=true;});}
   var day=String(d.getDay());
   document.querySelectorAll('.hours tr').forEach(function(r){
     if(r.getAttribute('data-days').split(',').indexOf(day)>-1) r.classList.add('today');
